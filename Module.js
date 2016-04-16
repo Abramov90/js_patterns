@@ -14,7 +14,7 @@ var ModuleExample = (function() {
 
 })();
 
-/* Another Implementation */
+/* Little bit Another Implementation */
 
 (function() {
 
@@ -39,5 +39,5 @@ var ModuleExample = (function() {
 
 	window.ModuleExample = ModuleExample;
 
-})();
+})(window);
 
