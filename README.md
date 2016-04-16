@@ -1,4 +1,5 @@
 # js_patterns
 
-Implementation of all JavaScript patterns due plan of training **Project from Scratch**
-__________________
+------------------
+
+Implementation of **JavaScript Design Patterns** according to plan of training **"Project from Scratch"**
