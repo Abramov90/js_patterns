@@ -1,4 +1,4 @@
-function ExampleConstructor(valueOne, valueTwo, valueThree) {
+function ConstructorExample(valueOne, valueTwo, valueThree) {
 
 	this.valueOne = valueOne;
 	this.valueTwo = valueTwo;
