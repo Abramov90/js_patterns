@@ -3,38 +3,22 @@ var ModuleExample = (function() {
 	var _privateCounter = 0;
 
 	var _privateNumericStaticValue = 0;
-
-	var _config = {
-		firstProp: 'one',
-		secondProp: 'two'
-	};
-
-	function _inscreaseCounter() {
-		_privateCounter++;
-	};
-
-	function _decreaseCounter() {
-		_privateCounter--;
-	};
-
-	function _publicGetCount() {
-		return _privateCounter;
-	};
-
-	function _privateUpdateConfig(prop) {
-		_config[prop.name] = prop.value;
-	};
-
-	function _publicGetPrivateValue() {
-		return _privateNumericStaticValue;
+	
+	function _somePrivateMethod(prop) {
+		console.log('You entered ' + prop);
 	};
 
 	return {
-		getHighter: _inscreaseCounter,
-		getLower: _decreaseCounter,
-		getCount: _publicGetCount,
-		getValue: _publicGetPrivateValue,
-		updateConfig: _privateUpdateConfig
+
+		somePublicValue: "value",
+
+		getCount: function() {
+			return _privateCounter;
+		},
+
+		somePublicMethod: function(prop) {
+			_somePrivateMethod(prop);
+		}
 	};
 	
 })();
