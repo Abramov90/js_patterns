@@ -1,22 +1,9 @@
-var PrototypeExaple = function() {
+var PrototypeExample = (function() {
+	function F() {};
 
-	function _somePrivateMethod() {
-		console.log(' do something');
+	return function(proto) {
+		F.prototype = proto;
+		return new F();
 	};
 
-	function _anotherPrivateFunction() {
-		console.log('do something another');
-	};
-
-	this.publicFunction = function() {
-		_somePrivateMethod();
-		_anotherPrivateMethod();
-	};
-
-};
-
-function prototypeInstance() {
-	this.name = 'instance';
-
-	prototypeInstance,prototype = new PrototypeExaple();
-};
+})();
