@@ -8,8 +8,8 @@ function ObserverExample() {
 		},
 
 		unsubscribe: function(fn) {
-			this.observerList.filter(function(item) {
-				return item !== fn;
+			this.observerList = this.observerList.filter(function(observer) {
+				return observer !== fn;
 			});
 		},
 

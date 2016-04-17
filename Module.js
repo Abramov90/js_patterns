@@ -3,41 +3,38 @@ var ModuleExample = (function() {
 	var _privateCounter = 0;
 
 	var _privateNumericStaticValue = 0;
-	
-	function _somePrivateMethod(prop) {
-		console.log('You entered ' + prop);
+
+	var _config = {
+		firstProp: 'one',
+		secondProp: 'two'
 	};
 
-	this.someMethod = function _somePrivateMethod(prop) {
-		_somePrivateMethod(prop);
+	function _inscreaseCounter() {
+		_privateCounter++;
+	};
+
+	function _decreaseCounter() {
+		_privateCounter--;
+	};
+
+	function _publicGetCount() {
+		return _privateCounter;
+	};
+
+	function _privateUpdateConfig(prop) {
+		_config[prop.name] = prop.value;
+	};
+
+	function _publicGetPrivateValue() {
+		return _privateNumericStaticValue;
+	};
+
+	return {
+		getHighter: _inscreaseCounter,
+		getLower: _decreaseCounter,
+		getCount: _publicGetCount,
+		getValue: _publicGetPrivateValue,
+		updateConfig: _privateUpdateConfig
 	};
 
 })();
-
-/* Little bit Another Implementation */
-
-(function() {
-
-	function ModuleExample() {
-
-		var _privateCount = 0;
-
-		var _privateIncreaseCount = function() {
-			_privateCount++;
-		};
-
-		var _privateDecreaseCount = function() {
-			_privateCount++;
-		};
-
-		this.publicMethod = _privateIncreaseCount;
-
-		this.decreaseCount = _privateDecreaseCount;
-
-		this.getCount = function() { return _privateCount; };
-	};
-
-	window.ModuleExample = ModuleExample;
-
-})(window);
-
