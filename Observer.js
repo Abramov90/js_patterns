@@ -42,10 +42,3 @@ function Subject() {
 		}
 	};
 };
-
-function ObserverInstanceExample() {
-
-	this.update = function(value) {
-		console.log(value);
-	};
-}
